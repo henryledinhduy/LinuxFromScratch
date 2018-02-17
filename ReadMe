@@ -1,0 +1,30 @@
+This special report tell the story of building my own version of Linux. It contains materials and experiences 
+that help other people understand what I have done and provide enough information to help other people build 
+their own version if wish. 
+
+Warning: This is not only just a personal project but also a school project. There will be a lot of academic stuff
+and things that are very typical “schooled”. However, I encourage you to read them as well, they are good, though. 
+
+1. Why Linux from Scratch
+I have been dreamed about building my own version of operating system since I was a little child. Unfortunately, 
+due to the lack of knowledge and English language barrier, I haven’t had a chance to do it before, but now I have 
+enough skills to actually do it. That’s why I decided to do this project. 
+Building your own Linux Version is a great way to learn and understand what go under the system and how Linux distros
+are being developed. At the same time, it is also a great way to practice Unix Shell. 
+
+2. Objective of the project
+The aim of this project is to build the simplest possible Linux System. The targeted device for this operating system 
+is limited resource Embedded Computer. 
+
+3. Materials
+There are several materials that provide insight and instructions on making a new Linux Distro. There are two sources
+that I learn from. The first one is Linux From Scratch Project http://www.linuxfromscratch.org/ and Second is from 
+The Linux Foundation.  
+
+3. Prerequisites
+This project is not an easy task. In order to live with it, you first need to be a powerful Unix command line user. 
+You need to know how to compile softwares and install them. Also, you need to has knowledge of Operating System, 
+Computer Architecture. For safety reason, the system will be built on a virtual machine. Therefore, you need to know 
+how to make one. You can also do it on your real computer but if something go wrong,… I don’t know, … you tell me. 
+When I was a child I helped a friend asked me to install a new Windows  and he end up cried because I clicked on the 
+wrong partition. 
