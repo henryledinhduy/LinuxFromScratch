@@ -5,12 +5,13 @@ their own version if wish.
 Warning: This is not only just a personal project but also a school project. There will be a lot of academic stuff
 and things that are very typical “schooled”. However, I encourage you to read them as well, they are good, though. 
 
-1. Why Linux from Scratch
+1. Why building a Simplest Linux from Scratch?
 I have been dreamed about building my own version of operating system since I was a little child. Unfortunately, 
 due to the lack of knowledge and English language barrier, I haven’t had a chance to do it before, but now I have 
 enough skills to actually do it. That’s why I decided to do this project. 
 Building your own Linux Version is a great way to learn and understand what go under the system and how Linux distros
 are being developed. At the same time, it is also a great way to practice Unix Shell. 
+Also, for embedded system programmer, this is great because you can deploy this system on your small device. 
 
 2. Objective of the project
 The aim of this project is to build the simplest possible Linux System. The targeted device for this operating system 
