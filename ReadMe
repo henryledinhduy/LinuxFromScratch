@@ -1,31 +1,38 @@
-This special report tell the story of building my own version of Linux. It contains materials and experiences 
-that help other people understand what I have done and provide enough information to help other people build 
-their own version if wish. 
+I. INTRODUCTION
+This special report tell the story of building my own version of Linux. This is a final project of Unix Operating System for Smart System course. Besides, the other purpose of this project is provide further detail instruction and information to help other people build the same thing easily.
 
-Warning: This is not only just a personal project but also a school project. There will be a lot of academic stuff
-and things that are very typical “schooled”. However, I encourage you to read them as well, they are good, though. 
-
-1. Why building a Simplest Linux from Scratch?
-I have been dreamed about building my own version of operating system since I was a little child. Unfortunately, 
-due to the lack of knowledge and English language barrier, I haven’t had a chance to do it before, but now I have 
-enough skills to actually do it. That’s why I decided to do this project. 
-Building your own Linux Version is a great way to learn and understand what go under the system and how Linux distros
-are being developed. At the same time, it is also a great way to practice Unix Shell. 
-Also, for embedded system programmer, this is great because you can deploy this system on your small device. 
+1. Why Linux from Scratch
+I have been dreamed about building my own version of operating system since I was a little child. Unfortunately, due to the lack of knowledge and English language barrier, I haven’t had a chance to do it before, but now I have enough skills to actually do it. That’s why I decided to do this project. 
+Building your own Linux Version is a great way to learn and understand what go under the system and how Linux distros are being developed. 
 
 2. Objective of the project
-The aim of this project is to build the simplest possible Linux System. The targeted device for this operating system 
-is limited resource Embedded Computer. 
+The aim of this project is to build the simplest possible Linux System and understand things. In the future, I will create another system for an Embedded Computer. 
 
 3. Materials
-There are several materials that provide insight and instructions on making a new Linux Distro. There are two sources
-that I learn from. The first one is Linux From Scratch Project http://www.linuxfromscratch.org/ and Second is from 
-The Linux Foundation.  
+There are several materials that provide insight and instructions on making a new Linux Distro. There are two sources that I learn from. The first one is Linux From Scratch Project http://www.linuxfromscratch.org/ and Second is from The Linux Foundation.  Besides, Google is the other sources for searching things  that are not covered in the above materials.
 
 3. Prerequisites
-This project is not an easy task. In order to live with it, you first need to be a powerful Unix command line user. 
-You need to know how to compile softwares and install them. Also, you need to has knowledge of Operating System, 
-Computer Architecture. For safety reason, the system will be built on a virtual machine. Therefore, you need to know 
-how to make one. You can also do it on your real computer but if something go wrong,… I don’t know, … you tell me. 
-When I was a child I helped a friend asked me to install a new Windows  and he end up cried because I clicked on the 
-wrong partition. 
+This project is not an easy task. We need a lot of knowledge about Linux and Software in order to successfully finish this project. The first thing is a firm skill on how to use Unix Command Line. Second is how to compile and install software and third is the understanding of the structure of Unix Operating System. And the most important thing is how to fix error, I have faced a lot of errors and made a lot of mistake before successfully build the final Operating System. 
+
+
+II – How to use Qemu-Kvm 
+
+Doing this on your real machine for the first time is a bad idea, therefore, I decided to install it on a virtual machine by using qemu-kvm. There is another benefit of using qemu-kvm is the next time I try to build the similar one for an embedded device, I don’t have to learn how to create an emulator. 
+
+In this project, I build the new OS by using Ubuntu 16.04. x64_86. It is possible to do it by using other Linux Distro but I have tried Fedora and OpenSuse, I want to try Ubuntu as well. 
+
+So, the first step is create an qemu image and install Ubuntu on it. You can also use Live CD but I prefer an installed version.
+
+$ qemu-img create ubuntu.qcow 25G 
+
+Next, we need to boot the image with the Ubuntu iso file and install it. Then Create 2 big partition, one for our new Ubuntu and one for the new Linux OS.
+
+$ qemu-system-x86_64 -hda ubuntu.qcow -boot d -net nic -net user -m 1024 -enable-kvm -localtime -vga vmware -cdrom ubuntu-16.04.3-desktop-amd64.iso  
+
+These above command will boot the system with the ubuntu ISO file and then we can install it on ubuntu.qcow image. 
+
+After the system has been installed, restart the virtual machine and boot the system again without the -cdrom:
+
+$ qemu-system-x86_64 -hda ubuntu.qcow -boot d -net nic -net user -m 1024 -enable-kvm -localtime -vga vmware 
+
+Now, we should be able to continue with our project. From now on, we follow the book Linux From Scratch. The following content of this project will mainly show experience. 
